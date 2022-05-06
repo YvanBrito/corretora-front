@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <title>Corretora - Busca</title>
+</head>
+<body>
+  <header class="flex items-center justify-between bg-gray-400">
+    <input
+      class="hidden lg:block w-96 mx-20 h-12 px-6 rounded-3xl border"
+      placeholder="Endereço"
+      type="text"
+      name="location"
+      id="location"
+    >
+    <nav class="flex flex-row-reverse p-6">
+      <ul class="flex flex-column justify-between">
+        <li class="mx-3"><a href="#">Home</a></li>
+        <li class="mx-3"><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="flex main-content-size">
+    <section class="w-screen lg:w-8/12">
+      <div class="border-b-2 border-b-gray-300 p-5">
+        <nav>
+          <ul class="flex">
+            <li class="mr-2"><a href="/src/index.html">Início</a></li>
+            <li class="mr-2">></li>
+            <li class="mr-2">São Paulo, SP</li>
+          </ul>
+        </nav>
+        <button class="p-2.5 my-4 bg-gray-900 rounded-md text-white font-bold">Filtrar</button>
+      </div>
+      <div class="p-6 h-4/5 overflow-y-scroll grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+        <div class="w-60 h-96 m-auto rounded-md bg-gray-200"></div>
+      </div>
+    </section>
+    <section class="hidden lg:block">Mapa</section>
+  </main>
+  <footer class="bg-gray-300 h-12 flex justify-center items-center">
+    <p>Corretora&reg; Todos os direitos reservados</p>
+  </footer>
+  
+  <script>
+    let search = location.search.substring(1);
+    let params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+
+    console.log(params);
+  </script>
+</body>
+</html>
