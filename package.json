@@ -1,15 +1,9 @@
 {
-  "name": "teste",
+  "name": "corretora-front",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "tw:start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.0.24"
-  }
+  "license": "ISC"
 }

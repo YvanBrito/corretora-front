@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../dist/output.css" rel="stylesheet">
+  <link href="../../dist/css/main.css" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,24 +12,21 @@
 
   <title>Corretora - Home</title>
 </head>
-<body class="bg-gray-300">
-  <header class="bg-gray-400">
-    <nav class="flex flex-row-reverse p-6">
-      <ul class="flex flex-column justify-between">
-        <li class="mx-3"><a href="#">Home</a></li>
-        <li class="mx-3"><a href="#">Login</a></li>
+<body>
+  <header class="header">
+    <nav class="nav-menu">
+      <ul class="menu-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Login</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section class="bg-gray-200 h-screen">
-      <div class="flex flex-col items-center justify-center pt-40">
-        <h1 class="mb-32 font-bold text-7xl text-center text-white">Garanta já seu imóvel</h1>
-        <form 
-          class="flex flex-col items-center justify-between"
-          id="searchForm"
-        >
-          <div class="bg-gray-50 p-6 flex flex-col xl:flex-row items-center justify-between w-60 rounded-t-md">
+    <section class="main-section">
+      <div class="container">
+        <h1 class="main-title">Garanta já seu imóvel</h1>
+        <form id="searchForm" class="home-form">
+          <div class="estate-types">
             <div>
               <input type="radio" checked id="buy" name="acquisitionType" value="buy">
               <label for="buy">Comprar</label><br>
@@ -39,9 +36,9 @@
               <label for="rent">Alugar</label><br>
             </div>
           </div>
-          <div class="bottom-search-field flex flex-col xl:flex-row xl:justify-between items-center xl:px-20 bg-gray-50 p-6 rounded-md">
+          <div class="bottom-search-field">
             <select
-              class="rounded-3xl border px-6 h-12"
+              class="select-input"
               name="estateType"
               id="selectEstateType"
             >
@@ -49,19 +46,19 @@
               <option value="apartment">Apartamento</option>
             </select>
             <input
-              class="w-full my-6 mx-24 h-12 px-6 rounded-3xl border"
+              class="text-input"
               placeholder="Endereço"
               type="text"
               name="location"
               id="location"
             >
-            <button type="submit" class="bg-gray-300 hover:bg-gray-400 hover:shadow-xl hover:-translate-y-1 transition p-4 rounded-3xl w-52">Pesquisar</button>
+            <button type="submit" class="btn">Pesquisar</button>
           </div>
         </form>
       </div>
     </section>
   </main>
-  <footer class="bg-gray-300 h-32 flex justify-center items-center">
+  <footer class="footer">
     <p>Corretora&reg; Todos os direitos reservados</p>
   </footer>
   <script>
@@ -72,7 +69,7 @@
       let queryString = Object.keys(formProps).map((key) => {
         return encodeURIComponent(key) + '=' + encodeURIComponent(formProps[key])
       }).join('&');
-      window.location.href = `/src/search.html?${queryString}`;
+      window.location.href = `/src/pages/search.html?${queryString}`;
     });
   </script>
 </body>

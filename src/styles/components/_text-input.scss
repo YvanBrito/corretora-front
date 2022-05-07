@@ -1,0 +1,13 @@
+.text-input {
+  width: 80%;
+  margin: 2rem 4rem;
+  padding: 1.5rem;
+  border: 2px solid $bg-gray-200;
+  border-radius: 3rem;
+}
+
+@media only screen and (min-width: 1280px) {
+  .text-input {
+    width: 100%;
+  }
+}
