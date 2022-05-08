@@ -1,76 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../../dist/css/main.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../dist/css/main.css" rel="stylesheet" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Corretora - Home</title>
-</head>
-<body>
-  <header class="header">
-    <nav class="nav-menu">
-      <ul class="menu-list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="main-section">
-      <div class="container">
-        <h1 class="main-title">Garanta já seu imóvel</h1>
-        <form id="searchForm" class="home-form">
-          <div class="estate-types">
-            <div>
-              <input type="radio" checked id="buy" name="acquisitionType" value="buy">
-              <label for="buy">Comprar</label><br>
+    <title>Corretora - Home</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="" alt="Logo" />
+      <nav class="nav-menu">
+        <ul class="menu-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main-section">
+        <div class="container">
+          <h1 class="main-title">Garanta já seu imóvel</h1>
+          <form id="searchForm" class="home-form">
+            <div class="estate-types">
+              <div>
+                <input
+                  type="radio"
+                  checked
+                  id="buy"
+                  name="acquisitionType"
+                  value="buy"
+                />
+                <label for="buy">Comprar</label><br />
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="rent"
+                  name="acquisitionType"
+                  value="rent"
+                />
+                <label for="rent">Alugar</label><br />
+              </div>
             </div>
-            <div>
-              <input type="radio" id="rent" name="acquisitionType" value="rent">
-              <label for="rent">Alugar</label><br>
+            <div class="bottom-search-field">
+              <select
+                class="select-input"
+                name="estateType"
+                id="selectEstateType"
+              >
+                <option value="house">Casa</option>
+                <option value="apartment">Apartamento</option>
+              </select>
+              <input
+                class="text-input text-input--home"
+                placeholder="Endereço"
+                type="text"
+                name="location"
+                id="location"
+              />
+              <button type="submit" class="btn">Pesquisar</button>
             </div>
-          </div>
-          <div class="bottom-search-field">
-            <select
-              class="select-input"
-              name="estateType"
-              id="selectEstateType"
-            >
-              <option value="house">Casa</option>
-              <option value="apartment">Apartamento</option>
-            </select>
-            <input
-              class="text-input"
-              placeholder="Endereço"
-              type="text"
-              name="location"
-              id="location"
-            >
-            <button type="submit" class="btn">Pesquisar</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>Corretora&reg; Todos os direitos reservados</p>
-  </footer>
-  <script>
-    document.getElementById("searchForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const formProps = Object.fromEntries(formData);
-      let queryString = Object.keys(formProps).map((key) => {
-        return encodeURIComponent(key) + '=' + encodeURIComponent(formProps[key])
-      }).join('&');
-      window.location.href = `/src/pages/search.html?${queryString}`;
-    });
-  </script>
-</body>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>Corretora&reg; Todos os direitos reservados</p>
+    </footer>
+    <script>
+      document
+        .getElementById("searchForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          const formProps = Object.fromEntries(formData);
+          let queryString = Object.keys(formProps)
+            .map((key) => {
+              return (
+                encodeURIComponent(key) +
+                "=" +
+                encodeURIComponent(formProps[key])
+              );
+            })
+            .join("&");
+          window.location.href = `/src/pages/busca.html?${queryString}`;
+        });
+    </script>
+  </body>
 </html>

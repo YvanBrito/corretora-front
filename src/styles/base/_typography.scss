@@ -1,5 +1,5 @@
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 62.5%;
 }
 
@@ -8,9 +8,9 @@ body {
 }
 
 .main-title {
-  margin-bottom: 20rem;
+  margin-bottom: 15rem;
   font-weight: bold;
   font-size: 9rem;
   text-align: center;
-  color: white;
+  color: $bg-gray-600;
 }

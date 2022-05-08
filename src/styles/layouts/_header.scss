@@ -1,11 +1,12 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
   background-color: $bg-gray-400;
 }
 
 .nav-menu {
   display: flex;
-  flex-direction: row-reverse;
-  padding: 1rem 5rem;
 }
 
 .menu-list {
